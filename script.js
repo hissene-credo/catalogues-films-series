@@ -60,10 +60,10 @@ let donnees = [
     image:"", titre:"Hereditary", genre:"Horreur", annee:"2018", type:"Film", note:"7.3/10"
 },
 {
-    image:"", titre:"Sherlock", genre:"Mystère", annee:"2010", type:"Série", note:"9.1/10"
+    image:"", titre:"Sherlock", genre:"Mystere", annee:"2010", type:"Série", note:"9.1/10"
 },
 {
-    image:"", titre:"Knives Out", genre:"Mystère", annee:"2019", type:"Film", note:"7.9/10"
+    image:"", titre:"Knives Out", genre:"Mystere", annee:"2019", type:"Film", note:"7.9/10"
 },
 {
     image:"", titre:"True Detective", genre:"Policier", annee:"2014", type:"Série", note:"8.9/10"
@@ -99,9 +99,8 @@ const conteneur = document.getElementById('les-catalogues');
 choix_filtre.forEach(button => {
     button.addEventListener('click', (event) => {
         filtreChoisi = event.target.dataset.genre;
+        filtreResultat();
         champ.focus();
-        ;
-        console.log(filtreChoisi); // <--- ligne a effacer plus tard
     });
 });
 let filtreChoisi = 'tous';
@@ -120,6 +119,7 @@ btn_rechercher.addEventListener('click', () => {
 });
 
 
+
 // Declarer des founctions pour effectuer les divers actions (filtrer les cartes, generer des cartes dynamiquement -pour afficher suivant le filtres) lie les fonctions aux ecoutes
 
 function genererCartes(liste) {
@@ -127,7 +127,6 @@ function genererCartes(liste) {
     liste.forEach(objet => {
         const carte = document.createElement('div');
         carte.className = 'carte';
-        carte.dataset.genre = objet.genre;
         carte.innerHTML = `
         <img src="${objet.image}" alt="${objet.titre}">
         <h3>${objet.titre}</h3>
@@ -148,9 +147,10 @@ function filtreResultat () {
     });
     genererCartes(resultat);
 };
- //genererCartes(donnees); // <--- a deplacer vers recherche sans filtre
 
+filtreResultat();
 
  /*
-    Amélioration souhaiter (perspective futures) : chaque carte puisse s'agrandir au click et presenter des infos supplementaire comme : le resume de l'oeuvre les acteurs principeux ( juste les plus celebres ou emblématique )
+    Amélioration souhaiter (perspective futures) : chaque carte puisse s'agrandir au click et presenter des infos supplementaire comme : le resumé de l'oeuvre, les acteurs principaux et le realisateur( juste les plus celebres ou emblématique )
+    Pouvoir également trier sur d'autres element comme le nom du realisateur, un acteur etc...  
  */
