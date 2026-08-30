@@ -1,5 +1,93 @@
-/* * {
+* {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-} */
+} 
+
+body {
+    background: #fff;
+    color: #22223b;
+}
+
+h2 {
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+}
+#paragraphe {
+    padding: 0.8rem;
+}
+
+.filtres {
+    padding: 0.8rem;
+    margin-top: 1rem;
+}
+.filtres button {
+    background:  #afdcaf;   
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 0.4rem;
+    margin: 0.1rem;
+}
+
+.filtres button:active {
+    background: lightcyan;
+}
+
+#recherche {
+    padding: 4px;
+    margin-left: 40%;
+    margin-right: 4px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 2rem;
+    border-radius: 0 4px;
+    border: 1px solid;
+}
+#recherche:hover{
+    border: 1px solid #afdcaf;
+}
+#recherche:focus {
+    outline: none;
+    border: 1px;
+    box-shadow: 4px 10px #afdcaf;
+}
+#btn-recherche {
+    border: 1px solid;
+    padding: 3px;
+    border-radius: 0 4px;
+}
+
+#btn-recherche:active {
+    background: #afdcaf;
+    border: 1px solid #afdcaf;
+}
+.contenu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+.carte {
+    transform: scale(1);
+    box-shadow: 0 1px 1px black;
+    border-radius: 6px;
+    padding: 1.2rem;
+    margin: 1rem;
+    transition: transform 0.2s ease, box-shadow O.2s ease;
+}
+.carte h3{
+    text-align: center;
+    padding: 1rem;
+}
+.carte p {
+    padding: 0.5rem;
+}
+#genretype {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.carte:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1px 20px #2a2c2a;
+}
